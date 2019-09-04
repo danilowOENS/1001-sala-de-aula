@@ -1,11 +1,18 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from sala.models import Aluno
-from sala.serializers import AlunoSerializer
+from sala.models import Aluno, Professor
+from sala.serializers import AlunoSerializer, ProfessorSerializer
+
 
 class AlunoViewSet(viewsets.ModelViewSet):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
+
+
+class ProfessorViewSet(viewsets.ModelViewSet):
+    queryset = Professor.objects.all()
+    serializer_class = ProfessorSerializer
+
 
 
 

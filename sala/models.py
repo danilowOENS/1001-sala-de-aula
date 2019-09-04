@@ -18,3 +18,12 @@ class Aluno(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Professor(models.Model):
+    nome = models.CharField(
+        max_length=50,
+        verbose_name='nome')
+
+    idade = models.CharField(
+        max_length=50,
+        verbose_name='idade')
