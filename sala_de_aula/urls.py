@@ -5,6 +5,7 @@ from django.conf.urls import include
 from rest_framework import routers
 from professor.views import ProfessorViewSet
 from sala.views import AlunoViewSet
+from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
 router.register(r'aluno',AlunoViewSet)
@@ -13,4 +14,5 @@ router.register(r'professor', ProfessorViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('auth-api/', obtain_auth_token),
 ]
