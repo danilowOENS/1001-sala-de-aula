@@ -11,8 +11,6 @@ class ProfessorViewSet(viewsets.ModelViewSet):
     filter_backends = [SearchFilter]
     search_fields = ['^nome', '=idade']
     queryset = Professor.objects.all()
-    permission_classes = (IsAuthenticatedOrReadOnly,)
-    authentication_classes = (TokenAuthentication,)
     serializer_class = ProfessorSerializer
 
 
